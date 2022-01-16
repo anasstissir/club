@@ -35,7 +35,6 @@ public class AdminUserDTO {
 
     private boolean activated = false;
 
-    @Size(min = 2, max = 10)
     private String langKey;
 
     private String createdBy;
@@ -129,7 +128,7 @@ public class AdminUserDTO {
     }
 
     public void setLangKey(String langKey) {
-        this.langKey = langKey;
+        this.langKey = "fr";
     }
 
     public String getCreatedBy() {

@@ -40,6 +40,8 @@
     "devServerPort": 9060,
     "clientPackageManager": "npm",
     "enableGradleEnterprise": false,
-    "languages": ["en", "fr"]
+    "languages": ["en", "fr"],
+    "entities": ["Student", "Club", "Event", "Meeting", "Invoice"],
+    "lastLiquibaseTimestamp": 1642360805000
   }
 }

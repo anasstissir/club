@@ -58,7 +58,6 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @Column(nullable = false)
     private boolean activated = false;
 
-    @Size(min = 2, max = 10)
     @Column(name = "lang_key", length = 10)
     private String langKey;
 
@@ -183,7 +182,7 @@ public class User extends AbstractAuditingEntity implements Serializable {
     }
 
     public void setLangKey(String langKey) {
-        this.langKey = langKey;
+        this.langKey = "fr";
     }
 
     public Set<Authority> getAuthorities() {

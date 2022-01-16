@@ -1,0 +1,70 @@
+// an ignored comment
+/** not an ignored comment */
+
+@filter
+@paginate(pagination)
+entity Student {
+	firstname String required,
+    lastname String required,
+    nationality String,
+    city String,
+    filiere String required,
+    level String required,
+    residency String,
+    tel String required,
+    mail String required,
+    picture Blob,
+}
+
+@filter
+@paginate(pagination)
+entity Club {
+	clubName String required,
+    creationDate Instant required,
+}
+
+@filter
+@paginate(pagination)
+entity Event {
+	title String required,
+    eventDate Instant required,
+    eventEnd Instant required,
+    eventPlace String required,
+    content TextBlob,
+    budget String required,
+}
+
+@filter
+@paginate(pagination)
+entity Meeting {
+	title String required,
+    meetingDate Instant required,
+    meetingPlace String required,
+    content TextBlob,
+}
+
+@filter
+@paginate(pagination)
+entity Invoice {
+	Amount Double required,
+    numInvoice String required,
+}
+
+
+
+relationship ManyToOne {
+	Meeting{club required} to Club,
+    Event{club required} to Club,
+    Invoice{event required} to Event,
+}
+
+relationship ManyToMany {
+    Student{club} to Club{student},
+}
+
+relationship OneToOne {
+    Student{user required} to User,
+}
+
+service all with serviceImpl
+
